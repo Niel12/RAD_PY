@@ -1,17 +1,9 @@
-arquivo = open("texto.txt", "w")
-
-print(arquivo)
-arquivo.write("Arquivo de Escrita")
-
-#arquivo = open("texto.txt", "r") Abertura de um arquivo como modo reader.
-
-#print(arquivo.seek(1)) posição do cursor
-#print(arquivo.read(8)) ler até a posição 8 
-
-#print(arquivo.readline()) #mostra codigo por linhas.
-#print(arquivo.readlines()) #mostra linha com todo conteudo em lista.
-
-#print(arquivo.read())
-#arquivo.close()
-
-#print(arquivo.closed)
+import sqlite3 #importação biblioteca sqlite
+banco = sqlite3.connect('database.db')
+cursor = banco.cursor()
+#cursor.execute("CREATE TABLE cliente(nome text, idade int, sex text)")
+#cursor.execute("INSERT INTO cliente VALUES('Cyntia', 40, 'F'), ('Pedro', 10, 'M')")
+#cursor.execute("DELETE FROM cliente WHERE nome='Pedro'")
+banco.commit()
+cursor.close()
+banco.close()
